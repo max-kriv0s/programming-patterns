@@ -28,7 +28,7 @@ class JWTStrategy implements AuthStrategy {
     }
 }
 
-class GiyhubStrategy implements AuthStrategy {
+class GithubStrategy implements AuthStrategy {
     auth(user: User1): boolean {
         if (user.githubToken) {
             // Идем в API
@@ -42,5 +42,5 @@ const user1 = new User1();
 user1.jwtToken = 'token';
 const auth1 = new Auth(new JWTStrategy());
 console.log(auth1.authUser(user1));
-auth1.setStrategy(new GiyhubStrategy());
+auth1.setStrategy(new GithubStrategy());
 console.log(auth1.authUser(user1));
